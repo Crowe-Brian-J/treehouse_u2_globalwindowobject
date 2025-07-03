@@ -5,5 +5,14 @@ body.addEventListener('click', () => {
 });*/
 
 const headline = document.getElementById('headline')
+//call specific button on click
+const updateButton = document.getElementById('btn-main')
 
-headline.style.border = 'solid 2px red'
+// add this to call on button click
+// headline.style.border = 'solid 2px red';
+
+const handleClick = () => {
+  headline.style.border = 'solid 2px red'
+}
+
+updateButton.addEventListener('click', handleClick)
