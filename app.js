@@ -10,8 +10,14 @@ const headline = document.getElementById('headline')
 const updateButton = document.getElementById('btn-main')
 //get li elements to hide
 const liHide = document.getElementsByTagName('li')
+//call hide list btn-toggle
 const toggleButton = document.getElementsByClassName('btn-toggle')[0]
-console.log(toggleButton)
+//get highlights from li items
+const highlights = document.getElementsByClassName('highlights')
+
+for (const highlight of highlights) {
+  highlight.style.backgroundColor = 'cornsilk'
+}
 
 //handle update heading button
 const handleClickHeadingBtn = () => {
