@@ -4,15 +4,25 @@ body.addEventListener('click', () => {
   body.innerHTML = '<h1>Hello, World!</h1>';
 });*/
 
+//find the headline element
 const headline = document.getElementById('headline')
 //call specific button on click
 const updateButton = document.getElementById('btn-main')
+//get li elements to hide
+const liHide = document.getElementsByTagName('li')
+const toggleButton = document.getElementsByClassName('btn-toggle')[0]
+console.log(toggleButton)
 
-// add this to call on button click
-// headline.style.border = 'solid 2px red';
-
-const handleClick = () => {
+//handle update heading button
+const handleClickHeadingBtn = () => {
   headline.style.border = 'solid 2px red'
 }
+//handle hide list button
+const handleHideListBtn = () => {
+  for (let i = 0; i < liHide.length; i++) {
+    liHide[i].style.color = 'orchid'
+  }
+}
 
-updateButton.addEventListener('click', handleClick)
+updateButton.addEventListener('click', handleClickHeadingBtn)
+toggleButton.addEventListener('click', handleHideListBtn)
