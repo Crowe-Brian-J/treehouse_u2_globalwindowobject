@@ -7,13 +7,13 @@ body.addEventListener('click', () => {
 //find the headline element
 const headline = document.getElementById('headline')
 //call specific button on click
-const updateButton = document.getElementById('btn-main')
+const updateButton = document.querySelector('.btn-main')
 //get li elements to hide
-const liHide = document.getElementsByTagName('li')
+const liHide = document.querySelectorAll('li')
 //call hide list btn-toggle
 const toggleButton = document.getElementsByClassName('btn-toggle')[0]
 //get highlights from li items
-const highlights = document.getElementsByClassName('highlights')
+const highlights = document.querySelectorAll('.highlights')
 
 for (const highlight of highlights) {
   highlight.style.backgroundColor = 'cornsilk'
