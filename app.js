@@ -8,10 +8,10 @@ body.addEventListener('click', () => {
 const updateButton = document.querySelector('.btn-main')
 /*//get li elements to hide
 const liHide = document.querySelectorAll('li')
-//call hide list btn-toggle
-const toggleButton = document.getElementsByClassName('btn-toggle')[0]
 //get highlights from li items
 const highlights = document.querySelectorAll('.highlights')*/
+//call hide list btn-toggle
+const toggleButton = document.querySelector('.btn-toggle')
 
 /*for (const highlight of highlights) {
   highlight.style.backgroundColor = "cornsilk";
@@ -31,12 +31,23 @@ const handleClickHeadingBtn = () => {
   //clear input value for next change
   input.value = ''
 }
+
 //handle hide list button
-/*const handleHideListBtn = () => {
-  for (let i = 0; i < liHide.length; i++) {
-    liHide[i].style.color = 'orchid'
+const handleHideListBtn = () => {
+  const listContainer = document.querySelector('.list-container')
+
+  //use conditional to hide when visible, unhide when invisible
+  if (listContainer.style.display === 'none') {
+    toggleButton.textContent = 'Hide List'
+    //actually remove style from showing up in DOM
+    //listContainer.style.display = 'block';
+    listContainer.removeAttribute('style')
+  } else {
+    toggleButton.textContent = 'Show List'
+    //hide on click
+    listContainer.style.display = 'none'
   }
-}*/
+}
 
 updateButton.addEventListener('click', handleClickHeadingBtn)
-//toggleButton.addEventListener('click', handleHideListBtn)
+toggleButton.addEventListener('click', handleHideListBtn)
