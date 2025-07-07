@@ -24,6 +24,8 @@ const handleClickHeadingBtn = () => {
   const input = document.querySelector('.input-main')
   /*headline.style.border = 'solid 2px red';
   headline.style.fontSize = '60px';*/
+  //add transition to headline based on .grow in css (only happens on click)
+  headline.className = 'grow'
   //set headline's content to input value
   headline.textContent = input.value
   //clear input value for next change
