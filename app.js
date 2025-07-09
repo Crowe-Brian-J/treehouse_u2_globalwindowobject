@@ -12,8 +12,10 @@ const liHide = document.querySelectorAll('li')
 const highlights = document.querySelectorAll('.highlights')*/
 //call add task button
 const addTaskButton = document.querySelector('.btn-main')
-//call hide list btn-toggle
+//call hide list button
 const toggleButton = document.querySelector('.btn-toggle')
+//call remove list button
+const removeButton = document.querySelector('.btn-remove')
 
 /*for (const highlight of highlights) {
   highlight.style.backgroundColor = "cornsilk";
@@ -66,5 +68,14 @@ const handleHideListBtn = () => {
   }
 }
 
+//handle remove task button
+const handleRemoveTaskBtn = () => {
+  //li:last-child selects the last li child element
+  const lastItem = document.querySelector('li:last-child')
+
+  lastItem.remove()
+}
+
 addTaskButton.addEventListener('click', handleClickTaskBtn)
 toggleButton.addEventListener('click', handleHideListBtn)
+removeButton.addEventListener('click', handleRemoveTaskBtn)
