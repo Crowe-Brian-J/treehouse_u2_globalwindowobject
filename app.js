@@ -5,11 +5,13 @@ body.addEventListener('click', () => {
 });*/
 
 //call specific button on click
-const updateButton = document.querySelector('.btn-main')
+//const updateButton = document.querySelector('.btn-main')
 /*//get li elements to hide
 const liHide = document.querySelectorAll('li')
 //get highlights from li items
 const highlights = document.querySelectorAll('.highlights')*/
+//call add task button
+const addTaskButton = document.querySelector('.btn-main')
 //call hide list btn-toggle
 const toggleButton = document.querySelector('.btn-toggle')
 
@@ -18,17 +20,23 @@ const toggleButton = document.querySelector('.btn-toggle')
 }*/
 
 //handle update heading button
-const handleClickHeadingBtn = () => {
-  //find the headline element
-  const headline = document.getElementById('headline')
+const handleClickTaskBtn = () => {
+  //find the headline element - no longer updating headline
+  //const headline = document.getElementById('headline')
   const input = document.querySelector('.input-main')
+  const item = document.createElement('li')
+
+  item.textContent = input.value
+  console.log(item)
+
   /*headline.style.border = 'solid 2px red';
   headline.style.fontSize = '60px';*/
   //add transition to headline based on .grow in css (only happens on click)
-  headline.className = 'grow'
+  //headline.className = 'grow';
   //set headline's content to input value
-  headline.textContent = input.value
+  //headline.textContent = input.value;
   //clear input value for next change
+
   input.value = ''
 }
 
@@ -49,5 +57,5 @@ const handleHideListBtn = () => {
   }
 }
 
-updateButton.addEventListener('click', handleClickHeadingBtn)
+addTaskButton.addEventListener('click', handleClickTaskBtn)
 toggleButton.addEventListener('click', handleHideListBtn)
