@@ -24,10 +24,17 @@ const handleClickTaskBtn = () => {
   //find the headline element - no longer updating headline
   //const headline = document.getElementById('headline')
   const input = document.querySelector('.input-main')
+  const list = document.querySelector('ul')
   const item = document.createElement('li')
 
   item.textContent = input.value
-  console.log(item)
+
+  /*add to parent node -> list defined above
+  append adds to end, prepend adds to beginning
+  aria-live lets screen readers know content in element will change dynamically and to look for the changes
+  polite means it waits for current task to finish before alerting*/
+
+  list.prepend(item)
 
   /*headline.style.border = 'solid 2px red';
   headline.style.fontSize = '60px';*/
